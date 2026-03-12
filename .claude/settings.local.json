@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:cr2s-nantes.fr)",
+      "WebSearch",
+      "Bash(npm create:*)",
+      "Bash(npm install:*)"
+    ]
+  }
+}

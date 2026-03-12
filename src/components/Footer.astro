@@ -1,0 +1,146 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="logo-name">CR2S</span>
+          <span class="logo-subtitle">Centre de Rééducation Sport & Santé</span>
+        </div>
+        <p class="footer-desc">
+          Depuis plus de 20 ans, nous accompagnons les sportifs amateurs et professionnels dans leur rééducation à Nantes.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="/">Accueil</a>
+        <a href="/services">Services</a>
+        <a href="/equipe">Équipe</a>
+        <a href="/equipements">Équipements</a>
+        <a href="/contact">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="/services#kinesitherapie">Kinésithérapie</a>
+        <a href="/services#osteopathie">Ostéopathie</a>
+        <a href="/services#podologie">Podologie</a>
+        <a href="/services#reeducation">Rééducation sportive</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>18 bis, rue Fouré</p>
+        <p>44000 Nantes</p>
+        <a href="tel:0240890014" class="footer-phone">02 40 89 00 14</a>
+        <a href="https://www.maiia.com/cabinet-paramedical/44000-nantes/cr2s-centre-de-reeducation-sport---sante" target="_blank" rel="noopener" class="btn btn-accent footer-cta">
+          Prendre rendez-vous
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {year} CR2S - Centre de Rééducation Sport & Santé. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--color-primary-dark);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 4rem 0 0;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 3rem;
+  }
+
+  .footer-brand .logo-name {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: white;
+    display: block;
+  }
+
+  .footer-brand .logo-subtitle {
+    font-size: 0.75rem;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+  }
+
+  .footer-desc {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .footer-col h4 {
+    color: white;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-col a,
+  .footer-col p {
+    display: block;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 0.3rem 0;
+    transition: var(--transition);
+  }
+
+  .footer-col a:hover {
+    color: var(--color-accent);
+    padding-left: 4px;
+  }
+
+  .footer-phone {
+    font-weight: 600;
+    color: white !important;
+    font-size: 1rem !important;
+    margin-top: 0.5rem;
+  }
+
+  .footer-cta {
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+    display: inline-flex;
+  }
+
+  .footer-bottom {
+    margin-top: 3rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+  }
+
+  .footer-bottom p {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  @media (max-width: 840px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 540px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

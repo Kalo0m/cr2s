@@ -1,0 +1,419 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Accueil">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-gradient"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-badge">Centre de rééducation à Nantes</div>
+      <h1>Votre santé,<br/>notre <span class="text-accent">expertise</span></h1>
+      <p class="hero-text">
+        Depuis plus de 20 ans, le CR2S accompagne les sportifs amateurs et professionnels
+        dans leur rééducation avec une équipe de 13 praticiens spécialisés.
+      </p>
+      <div class="hero-actions">
+        <a href="https://www.maiia.com/cabinet-paramedical/44000-nantes/cr2s-centre-de-reeducation-sport---sante" target="_blank" rel="noopener" class="btn btn-accent">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Prendre rendez-vous
+        </a>
+        <a href="/services" class="btn btn-outline">Nos services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">20+</span>
+          <span class="stat-label">ans d'expérience</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">13</span>
+          <span class="stat-label">praticiens</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">350</span>
+          <span class="stat-label">m² d'espace</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES APERÇU -->
+  <section class="section" id="services-preview">
+    <div class="container">
+      <div class="section-header">
+        <h2>Nos expertises</h2>
+        <p>Une prise en charge complète pour votre rééducation et votre bien-être</p>
+      </div>
+      <div class="grid-3">
+        <div class="card service-card">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 20a6 6 0 0 0-12 0"/>
+              <circle cx="12" cy="10" r="4"/>
+              <path d="M2 12h2m16 0h2M12 2v2"/>
+            </svg>
+          </div>
+          <h3>Kinésithérapie</h3>
+          <p>Traitement basé sur le mouvement : éducation thérapeutique, exercices actifs, massages et étirements pour rétablir vos capacités fonctionnelles.</p>
+          <a href="/services#kinesitherapie" class="service-link">En savoir plus &rarr;</a>
+        </div>
+
+        <div class="card service-card">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <h3>Ostéopathie</h3>
+          <p>Approche globale identifiant et traitant les restrictions de mobilité affectant l'ensemble des structures du corps humain.</p>
+          <a href="/services#osteopathie" class="service-link">En savoir plus &rarr;</a>
+        </div>
+
+        <div class="card service-card">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
+              <line x1="4" y1="22" x2="4" y2="15"/>
+            </svg>
+          </div>
+          <h3>Podologie</h3>
+          <p>Spécialiste des pathologies sportives du pied, du membre inférieur et du rachis. Réalisation de semelles orthopédiques sur mesure.</p>
+          <a href="/services#podologie" class="service-link">En savoir plus &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- À PROPOS -->
+  <section class="section about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">
+          <div class="about-image-wrapper">
+            <svg class="about-illustration" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+              <rect width="500" height="400" rx="20" fill="var(--color-bg-alt)"/>
+              <!-- Pool illustration -->
+              <rect x="60" y="200" width="380" height="140" rx="16" fill="#b8e6e0" opacity="0.5"/>
+              <rect x="80" y="220" width="340" height="100" rx="12" fill="var(--color-accent)" opacity="0.3"/>
+              <!-- Wave lines -->
+              <path d="M100 260 Q140 245 180 260 Q220 275 260 260 Q300 245 340 260 Q380 275 400 260" stroke="var(--color-accent)" stroke-width="2" fill="none" opacity="0.6"/>
+              <path d="M100 280 Q140 265 180 280 Q220 295 260 280 Q300 265 340 280 Q380 295 400 280" stroke="var(--color-accent)" stroke-width="2" fill="none" opacity="0.4"/>
+              <!-- Building outline -->
+              <rect x="120" y="60" width="260" height="150" rx="8" fill="white" stroke="var(--color-primary)" stroke-width="2"/>
+              <text x="250" y="130" text-anchor="middle" font-family="Inter, sans-serif" font-weight="800" font-size="32" fill="var(--color-primary)">CR2S</text>
+              <text x="250" y="158" text-anchor="middle" font-family="Inter, sans-serif" font-weight="500" font-size="12" fill="var(--color-text-light)">350m² au coeur de Nantes</text>
+              <!-- Exercise figures -->
+              <circle cx="150" cy="90" r="6" fill="var(--color-accent)"/>
+              <line x1="150" y1="96" x2="150" y2="115" stroke="var(--color-accent)" stroke-width="2"/>
+              <line x1="140" y1="105" x2="160" y2="105" stroke="var(--color-accent)" stroke-width="2"/>
+              <circle cx="350" cy="90" r="6" fill="var(--color-accent)"/>
+              <line x1="350" y1="96" x2="350" y2="115" stroke="var(--color-accent)" stroke-width="2"/>
+              <line x1="345" y1="115" x2="340" y2="130" stroke="var(--color-accent)" stroke-width="2"/>
+              <line x1="355" y1="115" x2="360" y2="130" stroke="var(--color-accent)" stroke-width="2"/>
+            </svg>
+          </div>
+        </div>
+        <div class="about-text">
+          <h2>Un centre dédié<br/>à votre rééducation</h2>
+          <p>
+            Situé au coeur de Nantes, le <strong>CR2S</strong> dispose d'un espace de <strong>350 m²</strong>
+            équipé des technologies les plus récentes en matière de rééducation : plateau technique,
+            balnéothérapie avec piscine de 28 m², appareils de musculation et cardio, ondes de choc,
+            cryothérapie et échographie.
+          </p>
+          <p>
+            Notre équipe pluridisciplinaire de <strong>13 praticiens</strong> — kinésithérapeutes,
+            ostéopathes et podologues — vous accompagne de la blessure jusqu'au retour sur le terrain.
+          </p>
+          <div class="about-features">
+            <div class="feature">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Rez-de-chaussée, accessible PMR</span>
+            </div>
+            <div class="feature">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Piscine de balnéothérapie</span>
+            </div>
+            <div class="feature">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Plateau technique de 85 m²</span>
+            </div>
+            <div class="feature">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Équipements innovants</span>
+            </div>
+          </div>
+          <a href="/equipements" class="btn btn-primary">Découvrir nos équipements</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container cta-content">
+      <h2>Prêt à reprendre le sport ?</h2>
+      <p>Prenez rendez-vous en ligne ou appelez-nous. Notre secrétariat vous accueille du lundi au vendredi.</p>
+      <div class="cta-actions">
+        <a href="https://www.maiia.com/cabinet-paramedical/44000-nantes/cr2s-centre-de-reeducation-sport---sante" target="_blank" rel="noopener" class="btn btn-accent">
+          Réserver en ligne
+        </a>
+        <a href="tel:0240890014" class="btn btn-outline" style="border-color: white; color: white;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          02 40 89 00 14
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 72px;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-gradient {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(78, 205, 196, 0.08) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(26, 92, 58, 0.06) 0%, transparent 50%),
+      linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(26, 92, 58, 0.08);
+    color: var(--color-primary);
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(26, 92, 58, 0.12);
+  }
+
+  .hero h1 {
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.03em;
+  }
+
+  .text-accent {
+    color: var(--color-primary);
+    position: relative;
+  }
+
+  .text-accent::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: var(--color-accent);
+    opacity: 0.3;
+    border-radius: 4px;
+    z-index: -1;
+  }
+
+  .hero-text {
+    font-size: 1.15rem;
+    color: var(--color-text-light);
+    max-width: 560px;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 3.5rem;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 3rem;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-top: 0.25rem;
+  }
+
+  /* SERVICES PREVIEW */
+  .service-card {
+    text-align: left;
+  }
+
+  .service-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--color-bg-alt);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+  }
+
+  .service-card h3 {
+    margin-bottom: 0.75rem;
+  }
+
+  .service-card p {
+    color: var(--color-text-light);
+    font-size: 0.92rem;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+
+  .service-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    transition: var(--transition);
+  }
+
+  .service-link:hover {
+    color: var(--color-accent);
+  }
+
+  /* ABOUT */
+  .about-section {
+    background: var(--color-bg-alt);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .about-image-wrapper {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+
+  .about-illustration {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .about-text h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .about-text p {
+    color: var(--color-text-light);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .about-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+
+  .feature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  /* CTA */
+  .cta-section {
+    background: var(--color-primary);
+    padding: 5rem 0;
+  }
+
+  .cta-content {
+    text-align: center;
+  }
+
+  .cta-content h2 {
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .cta-content p {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 840px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .hero-stats {
+      gap: 2rem;
+    }
+  }
+
+  @media (max-width: 540px) {
+    .hero {
+      min-height: 80vh;
+    }
+
+    .hero-stats {
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .about-features {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

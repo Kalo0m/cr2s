@@ -1,0 +1,296 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const kines = [
+  { name: 'Cédric Lame', role: 'Kinésithérapeute' },
+  { name: 'Nicolas Foucher', role: 'Kinésithérapeute' },
+  { name: 'Maxime Foucher', role: 'Kinésithérapeute' },
+  { name: 'Adrien Couty', role: 'Kinésithérapeute' },
+  { name: 'Valentin Hulin', role: 'Kinésithérapeute' },
+  { name: 'Julie Philippot', role: 'Kinésithérapeute' },
+  { name: 'Théo Mahé', role: 'Kinésithérapeute' },
+  { name: 'Nina Marion', role: 'Kinésithérapeute' },
+  { name: 'Louis Landais', role: 'Kinésithérapeute' },
+  { name: 'Cécile Poirier', role: 'Kinésithérapeute' },
+  { name: 'Laurent Richard', role: 'Kinésithérapeute' },
+];
+
+const osteos = [
+  { name: 'Thomas Bizouarn', role: 'Ostéopathe' },
+  { name: 'Marion Gauthier Rat', role: 'Ostéopathe' },
+];
+
+const podos = [
+  { name: 'Praticien Podologie 1', role: 'Podologue' },
+  { name: 'Praticien Podologie 2', role: 'Podologue' },
+];
+
+const secretariat = [
+  { name: 'Martine', role: 'Secrétariat' },
+  { name: 'Patricia', role: 'Secrétariat' },
+];
+
+function getInitials(name: string) {
+  return name.split(' ').map(n => n[0]).join('').toUpperCase();
+}
+
+function getColor(index: number) {
+  const colors = ['#1a5c3a', '#2a7d52', '#4ecdc4', '#3a9d8f', '#1a7a5c', '#2d8b6a', '#45b5ad', '#1f6847'];
+  return colors[index % colors.length];
+}
+---
+
+<Layout title="Notre équipe" description="Découvrez l'équipe pluridisciplinaire du CR2S Nantes : kinésithérapeutes, ostéopathes et podologues.">
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="hero-badge">Notre équipe</div>
+        <h1>Des professionnels<br/><span class="text-accent">passionnés</span></h1>
+        <p>13 praticiens spécialisés dans la rééducation sportive, à votre service du lundi au vendredi.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- KINÉS -->
+  <section class="section">
+    <div class="container">
+      <div class="team-section-header">
+        <h2>Kinésithérapeutes</h2>
+        <p>Notre équipe de kinés du sport vous accompagne dans votre rééducation</p>
+      </div>
+      <div class="team-grid">
+        {kines.map((member, i) => (
+          <div class="team-card">
+            <div class="team-avatar" style={`background: ${getColor(i)}`}>
+              <span>{getInitials(member.name)}</span>
+            </div>
+            <h3>{member.name}</h3>
+            <span class="team-role">{member.role}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- OSTÉOS -->
+  <section class="section alt-bg">
+    <div class="container">
+      <div class="team-section-header">
+        <h2>Ostéopathes</h2>
+        <p>Prise en charge globale et personnalisée</p>
+      </div>
+      <div class="team-grid">
+        {osteos.map((member, i) => (
+          <div class="team-card">
+            <div class="team-avatar" style={`background: ${getColor(i + 3)}`}>
+              <span>{getInitials(member.name)}</span>
+            </div>
+            <h3>{member.name}</h3>
+            <span class="team-role">{member.role}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PODOLOGUES -->
+  <section class="section">
+    <div class="container">
+      <div class="team-section-header">
+        <h2>Podologues</h2>
+        <p>Spécialistes de la podologie du sport</p>
+      </div>
+      <div class="team-grid">
+        {podos.map((member, i) => (
+          <div class="team-card">
+            <div class="team-avatar" style={`background: ${getColor(i + 5)}`}>
+              <span>{getInitials(member.name)}</span>
+            </div>
+            <h3>{member.name}</h3>
+            <span class="team-role">{member.role}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SECRÉTARIAT -->
+  <section class="section alt-bg">
+    <div class="container">
+      <div class="team-section-header">
+        <h2>Secrétariat</h2>
+        <p>Votre premier contact au centre</p>
+      </div>
+      <div class="team-grid">
+        {secretariat.map((member, i) => (
+          <div class="team-card">
+            <div class="team-avatar" style={`background: ${getColor(i + 7)}`}>
+              <span>{getInitials(member.name)}</span>
+            </div>
+            <h3>{member.name}</h3>
+            <span class="team-role">{member.role}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container cta-content">
+      <h2>Rencontrez notre équipe</h2>
+      <p>Prenez rendez-vous avec le praticien de votre choix en quelques clics.</p>
+      <a href="https://www.maiia.com/cabinet-paramedical/44000-nantes/cr2s-centre-de-reeducation-sport---sante" target="_blank" rel="noopener" class="btn btn-accent">
+        Prendre rendez-vous
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    padding: 8rem 0 4rem;
+    background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
+  }
+
+  .page-hero-content {
+    max-width: 640px;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(26, 92, 58, 0.08);
+    color: var(--color-primary);
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(26, 92, 58, 0.12);
+  }
+
+  .page-hero h1 {
+    margin-bottom: 1rem;
+  }
+
+  .text-accent {
+    color: var(--color-primary);
+    position: relative;
+  }
+
+  .text-accent::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: var(--color-accent);
+    opacity: 0.3;
+    border-radius: 4px;
+    z-index: -1;
+  }
+
+  .page-hero p {
+    color: var(--color-text-light);
+    font-size: 1.1rem;
+  }
+
+  .alt-bg {
+    background: var(--color-bg-alt);
+  }
+
+  .team-section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .team-section-header h2 {
+    margin-bottom: 0.5rem;
+    position: relative;
+    display: inline-block;
+  }
+
+  .team-section-header h2::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--color-accent);
+    margin-top: 0.5rem;
+    border-radius: 2px;
+  }
+
+  .team-section-header p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .team-card {
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border: 1px solid var(--color-border);
+    transition: var(--transition);
+  }
+
+  .team-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+  }
+
+  .team-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+  }
+
+  .team-avatar span {
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.02em;
+  }
+
+  .team-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .team-role {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+  }
+
+  .cta-section {
+    background: var(--color-primary);
+    padding: 5rem 0;
+  }
+
+  .cta-content {
+    text-align: center;
+  }
+
+  .cta-content h2 {
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .cta-content p {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+  }
+</style>
