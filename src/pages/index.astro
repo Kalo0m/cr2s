@@ -6,11 +6,10 @@ import Layout from '../layouts/Layout.astro';
   <!-- HERO -->
   <section class="hero">
     <div class="container hero-content">
-      <span class="hero-tag">Centre de rééducation a Nantes</span>
       <h1>Votre santé,<br/>notre expertise.</h1>
       <p class="hero-text">
         Depuis plus de 20 ans, le CR2S accompagne les sportifs amateurs et professionnels
-        dans leur rééducation avec une équipe de 13 praticiens spécialisés.
+        dans leur rééducation avec une équipe de 13 praticiens spécialisés à Nantes.
       </p>
       <div class="hero-actions">
         <a href="https://www.maiia.com/cabinet-paramedical/44000-nantes/cr2s-centre-de-reeducation-sport---sante" target="_blank" rel="noopener" class="btn btn-accent">
@@ -19,28 +18,15 @@ import Layout from '../layouts/Layout.astro';
         <a href="/services" class="btn btn-outline">Découvrir nos services</a>
       </div>
     </div>
-    <div class="hero-bar">
-      <div class="container hero-stats">
-        <div class="stat">
-          <span class="stat-number">20+</span>
-          <span class="stat-label">ans d'expérience</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-number">13</span>
-          <span class="stat-label">praticiens</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-number">350 m²</span>
-          <span class="stat-label">d'espace dédié</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-number">3</span>
-          <span class="stat-label">spécialités</span>
-        </div>
-      </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-strip">
+    <div class="container stats-row">
+      <div class="stat"><span class="stat-num">20+</span> ans d'expérience</div>
+      <div class="stat"><span class="stat-num">13</span> praticiens</div>
+      <div class="stat"><span class="stat-num">350 m²</span> d'espace</div>
+      <div class="stat"><span class="stat-num">3</span> spécialités</div>
     </div>
   </section>
 
@@ -49,28 +35,28 @@ import Layout from '../layouts/Layout.astro';
     <div class="container">
       <div class="section-header">
         <h2>Nos expertises</h2>
-        <p>Une prise en charge complète pour votre rééducation et votre bien-être</p>
+        <p>Une prise en charge complète pour votre rééducation</p>
       </div>
       <div class="grid-3">
         <a href="/services#kinesitherapie" class="card service-card">
           <span class="service-num">01</span>
           <h3>Kinésithérapie</h3>
           <p>Éducation thérapeutique, exercices actifs, massages et étirements pour rétablir vos capacités fonctionnelles.</p>
-          <span class="card-link">En savoir plus &rarr;</span>
+          <span class="card-arrow">&rarr;</span>
         </a>
 
         <a href="/services#osteopathie" class="card service-card">
           <span class="service-num">02</span>
           <h3>Ostéopathie</h3>
-          <p>Approche globale identifiant et traitant les restrictions de mobilité affectant les structures du corps.</p>
-          <span class="card-link">En savoir plus &rarr;</span>
+          <p>Approche globale identifiant et traitant les restrictions de mobilité du corps.</p>
+          <span class="card-arrow">&rarr;</span>
         </a>
 
         <a href="/services#podologie" class="card service-card">
           <span class="service-num">03</span>
           <h3>Podologie</h3>
-          <p>Spécialiste des pathologies sportives du pied et du membre inférieur. Semelles sur mesure.</p>
-          <span class="card-link">En savoir plus &rarr;</span>
+          <p>Pathologies sportives du pied et du membre inférieur. Semelles orthopédiques sur mesure.</p>
+          <span class="card-arrow">&rarr;</span>
         </a>
       </div>
     </div>
@@ -81,36 +67,34 @@ import Layout from '../layouts/Layout.astro';
     <div class="container">
       <div class="about-grid">
         <div class="about-text">
-          <span class="tag">Le centre</span>
           <h2>Un espace dédié à votre rééducation</h2>
           <p>
             Situé au coeur de Nantes, le CR2S dispose d'un espace de <strong>350 m²</strong>
-            équipé des technologies les plus récentes : plateau technique de 85 m²,
-            balnéothérapie avec piscine de 28 m², appareils de musculation et cardio,
-            ondes de choc, cryothérapie et échographie.
+            avec plateau technique de 85 m², piscine de balnéothérapie, appareils de musculation
+            et cardio, ondes de choc, cryothérapie et échographie.
           </p>
           <p>
-            Notre équipe pluridisciplinaire de <strong>13 praticiens</strong> — kinésithérapeutes,
+            Notre équipe de <strong>13 praticiens</strong> — kinésithérapeutes,
             ostéopathes et podologues — vous accompagne de la blessure jusqu'au retour sur le terrain.
           </p>
           <a href="/equipements" class="btn btn-outline">Nos équipements</a>
         </div>
-        <div class="about-highlights">
-          <div class="highlight">
-            <span class="highlight-label">Accessibilité</span>
-            <span class="highlight-value">Rez-de-chaussée, PMR</span>
+        <div class="about-details">
+          <div class="detail-row">
+            <span class="detail-label">Accessibilité</span>
+            <span class="detail-value">Rez-de-chaussée, PMR</span>
           </div>
-          <div class="highlight">
-            <span class="highlight-label">Balnéothérapie</span>
-            <span class="highlight-value">Piscine 4 x 7 m</span>
+          <div class="detail-row">
+            <span class="detail-label">Balnéothérapie</span>
+            <span class="detail-value">Piscine 4 x 7 m</span>
           </div>
-          <div class="highlight">
-            <span class="highlight-label">Plateau technique</span>
-            <span class="highlight-value">85 m² équipés</span>
+          <div class="detail-row">
+            <span class="detail-label">Plateau technique</span>
+            <span class="detail-value">85 m² équipés</span>
           </div>
-          <div class="highlight">
-            <span class="highlight-label">Technologies</span>
-            <span class="highlight-value">Ondes de choc, cryo, écho</span>
+          <div class="detail-row">
+            <span class="detail-label">Technologies</span>
+            <span class="detail-value">Ondes de choc, cryo, écho</span>
           </div>
         </div>
       </div>
@@ -136,42 +120,22 @@ import Layout from '../layouts/Layout.astro';
 
 <style>
   .hero {
-    padding-top: 64px;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    padding: 10rem 0 5rem;
   }
 
   .hero-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 640px;
-    padding-top: 4rem;
-    padding-bottom: 2rem;
-  }
-
-  .hero-tag {
-    display: inline-block;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--color-accent);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    margin-bottom: 1.25rem;
+    max-width: 580px;
   }
 
   .hero h1 {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
   }
 
   .hero-text {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: var(--color-text-light);
-    max-width: 520px;
-    margin-bottom: 2rem;
     line-height: 1.8;
+    margin-bottom: 2rem;
   }
 
   .hero-actions {
@@ -180,43 +144,33 @@ import Layout from '../layouts/Layout.astro';
     flex-wrap: wrap;
   }
 
-  .hero-bar {
-    background: var(--color-primary);
-    padding: 1.75rem 0;
+  /* STATS */
+  .stats-strip {
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding: 1.5rem 0;
   }
 
-  .hero-stats {
+  .stats-row {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2.5rem;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
   }
 
   .stat {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: baseline;
+    gap: 0.4rem;
   }
 
-  .stat-number {
-    font-size: 1.5rem;
+  .stat-num {
+    font-size: 1.1rem;
     font-weight: 800;
-    color: white;
-    line-height: 1;
-    letter-spacing: -0.03em;
-  }
-
-  .stat-label {
-    font-size: 0.78rem;
-    color: rgba(255, 255, 255, 0.55);
-    margin-top: 0.2rem;
-  }
-
-  .stat-divider {
-    width: 1px;
-    height: 32px;
-    background: rgba(255, 255, 255, 0.15);
+    color: var(--color-text);
+    letter-spacing: -0.02em;
   }
 
   /* SERVICES */
@@ -227,34 +181,35 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .service-num {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 700;
     color: var(--color-accent);
     letter-spacing: 0.05em;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
   }
 
   .service-card h3 {
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.5rem;
   }
 
   .service-card p {
     color: var(--color-text-light);
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     line-height: 1.7;
     flex: 1;
   }
 
-  .card-link {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--color-primary);
-    margin-top: 1.25rem;
+  .card-arrow {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    margin-top: 1rem;
     transition: var(--transition);
   }
 
-  .service-card:hover .card-link {
+  .service-card:hover .card-arrow {
     color: var(--color-accent);
+    transform: translateX(4px);
+    display: inline-block;
   }
 
   /* ABOUT */
@@ -269,69 +224,51 @@ import Layout from '../layouts/Layout.astro';
     align-items: start;
   }
 
-  .tag {
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--color-accent);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 0.75rem;
-  }
-
   .about-text h2 {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
   }
 
   .about-text p {
     color: var(--color-text-light);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     font-size: 0.92rem;
     line-height: 1.8;
   }
 
   .about-text .btn {
-    margin-top: 0.75rem;
+    margin-top: 1rem;
   }
 
-  .about-highlights {
+  .about-details {
     display: flex;
     flex-direction: column;
-    gap: 0;
-    margin-top: 0.5rem;
   }
 
-  .highlight {
+  .detail-row {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 1.25rem 0;
+    padding: 1.1rem 0;
     border-bottom: 1px solid var(--color-border);
   }
 
-  .highlight:first-child {
-    padding-top: 0;
-  }
-
-  .highlight:last-child {
+  .detail-row:last-child {
     border-bottom: none;
   }
 
-  .highlight-label {
+  .detail-label {
     font-size: 0.85rem;
     font-weight: 600;
-    color: var(--color-text);
   }
 
-  .highlight-value {
+  .detail-value {
     font-size: 0.85rem;
     color: var(--color-text-light);
   }
 
   /* CTA */
   .cta-section {
-    background: var(--color-primary);
     padding: 5rem 0;
+    border-top: 1px solid var(--color-border);
   }
 
   .cta-content {
@@ -339,14 +276,13 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .cta-content h2 {
-    color: white;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
   }
 
   .cta-content p {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 1.05rem;
-    margin-bottom: 2rem;
+    color: var(--color-text-light);
+    font-size: 1rem;
+    margin-bottom: 1.75rem;
   }
 
   .cta-actions {
@@ -357,44 +293,35 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .cta-phone {
-    color: white;
-    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    color: var(--color-text);
+    border: 1.5px solid var(--color-border);
     background: transparent;
     font-weight: 600;
-    padding: 0.8rem 1.75rem;
+    padding: 0.75rem 1.5rem;
     border-radius: var(--radius-sm);
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     transition: var(--transition);
   }
 
   .cta-phone:hover {
-    border-color: white;
-    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--color-text);
   }
 
   @media (max-width: 840px) {
     .about-grid {
       grid-template-columns: 1fr;
-      gap: 2.5rem;
-    }
-
-    .hero-stats {
-      gap: 1.5rem;
-    }
-
-    .stat-divider {
-      display: none;
+      gap: 2rem;
     }
   }
 
   @media (max-width: 540px) {
-    .hero-stats {
-      flex-wrap: wrap;
-      gap: 1.25rem;
+    .hero {
+      padding: 8rem 0 3rem;
     }
 
-    .stat {
-      min-width: 40%;
+    .stats-row {
+      flex-direction: column;
+      gap: 0.5rem;
     }
   }
 </style>

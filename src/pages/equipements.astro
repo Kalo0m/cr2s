@@ -5,12 +5,12 @@ const equipments = [
   {
     category: 'Balnéothérapie',
     items: ['Piscine 4 x 7 mètres', 'Hydrothérapie', 'Rééducation aquatique'],
-    description: 'Notre piscine de 28 m² permet une rééducation en milieu aquatique, idéale pour la reprise en douceur après une blessure.'
+    description: 'Piscine de 28 m² pour une rééducation en milieu aquatique, idéale pour la reprise en douceur.'
   },
   {
     category: 'Musculation & Cardio',
     items: ['Presse', 'Leg extension & leg curl', 'Vélos & stepper', 'Elliptique', 'Tapis de course'],
-    description: 'Un plateau technique complet pour le renforcement musculaire et la reprise cardiovasculaire.'
+    description: 'Plateau technique complet pour le renforcement musculaire et la reprise cardiovasculaire.'
   },
   {
     category: 'Rééducation fonctionnelle',
@@ -20,51 +20,35 @@ const equipments = [
   {
     category: 'Technologies',
     items: ['Ondes de choc', 'Cryothérapie', "Appareil d'échographie", 'Électro Kneehab', 'Game Ready'],
-    description: 'Technologies de pointe pour accélérer la récupération et optimiser les traitements.'
+    description: 'Technologies de pointe pour accélérer la récupération.'
   },
   {
     category: 'Soins individuels',
     items: ['Salles de thérapie manuelle', 'Mobilisations articulaires', 'Pressothérapie', 'Packs de froid'],
-    description: 'Plusieurs salles dédiées : thérapie manuelle, étirements et rééducation périnéale.'
+    description: 'Salles dédiées : thérapie manuelle, étirements et rééducation périnéale.'
   },
-];
-
-const stats = [
-  { number: '350 m²', label: 'Surface totale' },
-  { number: '85 m²', label: 'Plateau technique' },
-  { number: '28 m²', label: 'Piscine' },
-  { number: '20+', label: "Ans d'expérience" },
 ];
 ---
 
-<Layout title="Équipements" description="Découvrez les équipements et installations du CR2S Nantes.">
+<Layout title="Équipements" description="Les équipements et installations du CR2S Nantes.">
   <section class="page-hero">
     <div class="container">
-      <span class="tag">Nos installations</span>
-      <h1>Un plateau technique d'excellence</h1>
+      <h1>Nos équipements</h1>
       <p class="page-intro">350 m² d'espace dédié à votre rééducation, équipé des technologies les plus récentes.</p>
     </div>
   </section>
 
-  <section class="section stats-section">
-    <div class="container">
-      <div class="stats-grid">
-        {stats.map(s => (
-          <div class="stat-card">
-            <span class="stat-number">{s.number}</span>
-            <span class="stat-label">{s.label}</span>
-          </div>
-        ))}
-      </div>
+  <section class="stats-strip">
+    <div class="container stats-row">
+      <div class="stat"><span class="stat-num">350 m²</span> surface totale</div>
+      <div class="stat"><span class="stat-num">85 m²</span> plateau technique</div>
+      <div class="stat"><span class="stat-num">28 m²</span> piscine</div>
+      <div class="stat"><span class="stat-num">20+</span> ans d'expérience</div>
     </div>
   </section>
 
-  <section class="section equip-section">
+  <section class="section">
     <div class="container">
-      <div class="section-header">
-        <h2>Nos équipements</h2>
-        <p>Des installations modernes au service de votre rééducation</p>
-      </div>
       <div class="equip-grid">
         {equipments.map((eq) => (
           <div class="card equip-card">
@@ -92,63 +76,43 @@ const stats = [
 
 <style>
   .page-hero {
-    padding: 8rem 0 4rem;
-    background: var(--color-bg);
+    padding: 8rem 0 3.5rem;
   }
 
-  .tag {
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--color-accent);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 0.75rem;
-  }
-
-  .page-hero h1 { margin-bottom: 1rem; }
+  .page-hero h1 { margin-bottom: 0.75rem; }
 
   .page-intro {
     color: var(--color-text-light);
     font-size: 1.05rem;
-    max-width: 520px;
+    max-width: 480px;
   }
 
-  .stats-section {
-    padding-top: 0;
+  .stats-strip {
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding: 1.5rem 0;
   }
 
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+  .stats-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
   }
 
-  .stat-card {
-    background: var(--color-white);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    padding: 1.5rem;
-    text-align: center;
+  .stat {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
   }
 
-  .stat-number {
-    display: block;
-    font-size: 1.6rem;
+  .stat-num {
+    font-size: 1.1rem;
     font-weight: 800;
-    color: var(--color-primary);
-    line-height: 1.2;
-    letter-spacing: -0.03em;
-  }
-
-  .stat-label {
-    font-size: 0.8rem;
-    color: var(--color-text-muted);
-    margin-top: 0.15rem;
-  }
-
-  .equip-section {
-    background: var(--color-bg-alt);
+    color: var(--color-text);
+    letter-spacing: -0.02em;
   }
 
   .equip-grid {
@@ -158,26 +122,25 @@ const stats = [
   }
 
   .equip-card h3 {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
   }
 
   .equip-desc {
     color: var(--color-text-light);
-    font-size: 0.88rem;
-    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    margin-bottom: 0.85rem;
     line-height: 1.7;
   }
 
   .equip-list {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+    gap: 0.35rem;
   }
 
   .equip-list li {
-    font-size: 0.85rem;
-    color: var(--color-text);
-    padding-left: 1rem;
+    font-size: 0.84rem;
+    padding-left: 0.9rem;
     position: relative;
   }
 
@@ -186,15 +149,15 @@ const stats = [
     position: absolute;
     left: 0;
     top: 0.55em;
-    width: 5px;
-    height: 5px;
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
     background: var(--color-accent);
   }
 
   .cta-section {
-    background: var(--color-primary);
     padding: 5rem 0;
+    border-top: 1px solid var(--color-border);
   }
 
   .cta-content {
@@ -202,23 +165,20 @@ const stats = [
   }
 
   .cta-content h2 {
-    color: white;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
   }
 
   .cta-content p {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 1.05rem;
-    max-width: 480px;
-    margin: 0 auto 2rem;
-  }
-
-  @media (max-width: 840px) {
-    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    color: var(--color-text-light);
+    font-size: 1rem;
+    margin-bottom: 1.75rem;
   }
 
   @media (max-width: 540px) {
-    .stats-grid { grid-template-columns: 1fr; }
+    .stats-row {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
     .equip-grid { grid-template-columns: 1fr; }
   }
 </style>

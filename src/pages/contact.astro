@@ -15,8 +15,7 @@ const horaires = [
 <Layout title="Contact" description="Contactez le CR2S Nantes : adresse, horaires, téléphone et prise de rendez-vous.">
   <section class="page-hero">
     <div class="container">
-      <span class="tag">Contact</span>
-      <h1>Nous trouver</h1>
+      <h1>Contact</h1>
       <p class="page-intro">En plein centre de Nantes, notre centre vous accueille du lundi au vendredi. Accessible PMR, au rez-de-chaussée.</p>
     </div>
   </section>
@@ -39,7 +38,7 @@ const horaires = [
 
           <div class="info-block">
             <h3>Rendez-vous en ligne</h3>
-            <a href="https://www.maiia.com/cabinet-paramedical/44000-nantes/cr2s-centre-de-reeducation-sport---sante" target="_blank" rel="noopener" class="btn btn-accent rdv-btn">
+            <a href="https://www.maiia.com/cabinet-paramedical/44000-nantes/cr2s-centre-de-reeducation-sport---sante" target="_blank" rel="noopener" class="btn btn-accent">
               Réserver sur Maiia
             </a>
           </div>
@@ -56,17 +55,15 @@ const horaires = [
           </div>
         </div>
 
-        <div class="hours-section">
-          <div class="hours-card">
-            <h3>Horaires d'ouverture</h3>
-            <div class="hours-table">
-              {horaires.map((h) => (
-                <div class:list={['hours-row', { closed: h.heures === 'Fermé' }]}>
-                  <span class="hours-day">{h.jour}</span>
-                  <span class="hours-time">{h.heures}</span>
-                </div>
-              ))}
-            </div>
+        <div class="hours-card">
+          <h3>Horaires d'ouverture</h3>
+          <div class="hours-table">
+            {horaires.map((h) => (
+              <div class:list={['hours-row', { closed: h.heures === 'Fermé' }]}>
+                <span class="hours-day">{h.jour}</span>
+                <span class="hours-time">{h.heures}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -77,20 +74,19 @@ const horaires = [
     <div class="container">
       <div class="section-header">
         <h2>Comment venir</h2>
-        <p>Le CR2S est facilement accessible en transport ou en voiture</p>
       </div>
       <div class="grid-3">
         <div class="card access-card">
           <h3>En voiture</h3>
-          <p>Parking à proximité. Le centre se situe en plein coeur de Nantes, rue Fouré.</p>
+          <p>Parking à proximité, en plein coeur de Nantes, rue Fouré.</p>
         </div>
         <div class="card access-card">
           <h3>En tramway</h3>
-          <p>Arrêts de tramway à proximité, à quelques minutes à pied du centre.</p>
+          <p>Arrêts à proximité, à quelques minutes à pied du centre.</p>
         </div>
         <div class="card access-card">
           <h3>À vélo</h3>
-          <p>Stations Bicloo à proximité. Le centre est facilement accessible à vélo.</p>
+          <p>Stations Bicloo à proximité. Facilement accessible à vélo.</p>
         </div>
       </div>
     </div>
@@ -99,21 +95,10 @@ const horaires = [
 
 <style>
   .page-hero {
-    padding: 8rem 0 4rem;
-    background: var(--color-bg);
+    padding: 8rem 0 3.5rem;
   }
 
-  .tag {
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--color-accent);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 0.75rem;
-  }
-
-  .page-hero h1 { margin-bottom: 1rem; }
+  .page-hero h1 { margin-bottom: 0.75rem; }
 
   .page-intro {
     color: var(--color-text-light);
@@ -130,32 +115,32 @@ const horaires = [
   .contact-info {
     display: flex;
     flex-direction: column;
-    gap: 1.75rem;
+    gap: 1.5rem;
   }
 
   .info-block h3 {
-    font-size: 0.9rem;
-    margin-bottom: 0.35rem;
+    font-size: 0.88rem;
+    margin-bottom: 0.3rem;
     letter-spacing: 0;
   }
 
   .info-block p {
     color: var(--color-text-light);
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     line-height: 1.6;
   }
 
   .info-meta {
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     color: var(--color-text-muted);
     display: block;
-    margin-top: 0.2rem;
+    margin-top: 0.15rem;
   }
 
   .phone-link {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-weight: 700;
-    color: var(--color-primary);
+    color: var(--color-text);
     display: block;
     transition: var(--transition);
   }
@@ -164,34 +149,24 @@ const horaires = [
     color: var(--color-accent);
   }
 
-  .rdv-btn {
-    padding: 0.6rem 1.4rem;
-    font-size: 0.85rem;
-  }
-
   .hours-card {
-    background: var(--color-white);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     padding: 1.75rem;
+    height: fit-content;
   }
 
   .hours-card h3 {
-    font-size: 1rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .hours-table {
-    display: flex;
-    flex-direction: column;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
   }
 
   .hours-row {
     display: flex;
     justify-content: space-between;
-    padding: 0.55rem 0;
+    padding: 0.5rem 0;
     border-bottom: 1px solid var(--color-border);
-    font-size: 0.88rem;
+    font-size: 0.85rem;
   }
 
   .hours-row:last-child {
@@ -220,12 +195,12 @@ const horaires = [
   }
 
   .access-card h3 {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.35rem;
   }
 
   .access-card p {
     color: var(--color-text-light);
-    font-size: 0.88rem;
+    font-size: 0.85rem;
   }
 
   @media (max-width: 840px) {

@@ -45,7 +45,7 @@ const services = [
     id: 'reeducation',
     num: '04',
     title: 'Rééducation sportive',
-    intro: 'Prise en charge spécifique de la traumatologie sportive, accompagnant le sportif de sa blessure récente jusqu\'à son retour sur le terrain.',
+    intro: "Prise en charge spécifique de la traumatologie sportive, accompagnant le sportif de sa blessure récente jusqu'à son retour sur le terrain.",
     items: [
       'Protocoles de rééducation post-opératoire',
       'Renforcement musculaire ciblé',
@@ -60,20 +60,17 @@ const services = [
 <Layout title="Services" description="Kinésithérapie, ostéopathie, podologie et rééducation sportive au CR2S Nantes.">
   <section class="page-hero">
     <div class="container">
-      <span class="tag">Nos expertises</span>
-      <h1>Des soins adaptés<br/>à chaque besoin</h1>
-      <p class="page-intro">Une prise en charge complète par notre équipe pluridisciplinaire de kinésithérapeutes, ostéopathes et podologues.</p>
+      <h1>Nos services</h1>
+      <p class="page-intro">Une prise en charge complète par notre équipe de kinésithérapeutes, ostéopathes et podologues.</p>
     </div>
   </section>
 
   {services.map((service, index) => (
-    <section class:list={['section service-section', { alt: index % 2 === 1 }]} id={service.id}>
+    <section class:list={['section', { 'alt-bg': index % 2 === 1 }]} id={service.id}>
       <div class="container">
         <div class="service-content">
-          <div class="service-header">
-            <span class="service-num">{service.num}</span>
-            <h2>{service.title}</h2>
-          </div>
+          <span class="service-num">{service.num}</span>
+          <h2>{service.title}</h2>
           <p class="service-intro">{service.intro}</p>
           <ul class="service-list">
             {service.items.map(item => (
@@ -94,7 +91,7 @@ const services = [
   <section class="cta-section">
     <div class="container cta-content">
       <h2>Besoin d'un avis professionnel ?</h2>
-      <p>Nos praticiens sont à votre écoute pour déterminer le traitement le plus adapté.</p>
+      <p>Nos praticiens sont à votre écoute pour déterminer le traitement adapté.</p>
       <a href="https://www.maiia.com/cabinet-paramedical/44000-nantes/cr2s-centre-de-reeducation-sport---sante" target="_blank" rel="noopener" class="btn btn-accent">
         Prendre rendez-vous
       </a>
@@ -104,71 +101,56 @@ const services = [
 
 <style>
   .page-hero {
-    padding: 8rem 0 4rem;
-    background: var(--color-bg);
-  }
-
-  .tag {
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--color-accent);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 0.75rem;
+    padding: 8rem 0 3.5rem;
   }
 
   .page-hero h1 {
-    margin-bottom: 1rem;
-    max-width: 580px;
+    margin-bottom: 0.75rem;
   }
 
   .page-intro {
     color: var(--color-text-light);
     font-size: 1.05rem;
-    line-height: 1.8;
-    max-width: 560px;
+    max-width: 520px;
   }
 
-  .service-section.alt {
+  .alt-bg {
     background: var(--color-bg-alt);
   }
 
   .service-content {
-    max-width: 640px;
-  }
-
-  .service-header {
-    display: flex;
-    align-items: baseline;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    max-width: 600px;
   }
 
   .service-num {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 700;
     color: var(--color-accent);
     letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .service-content h2 {
+    margin-bottom: 0.75rem;
   }
 
   .service-intro {
     color: var(--color-text-light);
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     line-height: 1.8;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
   }
 
   .service-list {
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    gap: 0.5rem;
   }
 
   .service-list li {
-    font-size: 0.9rem;
-    color: var(--color-text);
-    padding-left: 1.25rem;
+    font-size: 0.88rem;
+    padding-left: 1rem;
     position: relative;
   }
 
@@ -177,27 +159,27 @@ const services = [
     position: absolute;
     left: 0;
     top: 0.55em;
-    width: 6px;
-    height: 6px;
+    width: 5px;
+    height: 5px;
     border-radius: 50%;
     background: var(--color-accent);
   }
 
   .service-price {
-    margin-top: 1.5rem;
-    padding: 1rem 1.5rem;
-    background: var(--color-white);
+    margin-top: 1.25rem;
+    padding: 0.85rem 1.25rem;
+    background: var(--color-bg-alt);
     border-radius: var(--radius-sm);
     display: inline-flex;
     align-items: baseline;
-    gap: 0.5rem;
+    gap: 0.4rem;
     border: 1px solid var(--color-border);
   }
 
   .price {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 800;
-    color: var(--color-primary);
+    color: var(--color-text);
   }
 
   .price-label {
@@ -206,8 +188,8 @@ const services = [
   }
 
   .cta-section {
-    background: var(--color-primary);
     padding: 5rem 0;
+    border-top: 1px solid var(--color-border);
   }
 
   .cta-content {
@@ -215,14 +197,13 @@ const services = [
   }
 
   .cta-content h2 {
-    color: white;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
   }
 
   .cta-content p {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 1.05rem;
+    color: var(--color-text-light);
+    font-size: 1rem;
     max-width: 480px;
-    margin: 0 auto 2rem;
+    margin: 0 auto 1.75rem;
   }
 </style>

@@ -36,8 +36,7 @@ function getInitials(name: string) {
 <Layout title="Notre équipe" description="Découvrez l'équipe pluridisciplinaire du CR2S Nantes.">
   <section class="page-hero">
     <div class="container">
-      <span class="tag">Notre équipe</span>
-      <h1>Des professionnels passionnés</h1>
+      <h1>Notre équipe</h1>
       <p class="page-intro">13 praticiens spécialisés dans la rééducation sportive, à votre service du lundi au vendredi.</p>
     </div>
   </section>
@@ -67,7 +66,7 @@ function getInitials(name: string) {
   <section class="cta-section">
     <div class="container cta-content">
       <h2>Rencontrez notre équipe</h2>
-      <p>Prenez rendez-vous avec le praticien de votre choix en quelques clics.</p>
+      <p>Prenez rendez-vous avec le praticien de votre choix.</p>
       <a href="https://www.maiia.com/cabinet-paramedical/44000-nantes/cr2s-centre-de-reeducation-sport---sante" target="_blank" rel="noopener" class="btn btn-accent">
         Prendre rendez-vous
       </a>
@@ -77,28 +76,17 @@ function getInitials(name: string) {
 
 <style>
   .page-hero {
-    padding: 8rem 0 4rem;
-    background: var(--color-bg);
-  }
-
-  .tag {
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--color-accent);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 0.75rem;
+    padding: 8rem 0 3.5rem;
   }
 
   .page-hero h1 {
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
   }
 
   .page-intro {
     color: var(--color-text-light);
     font-size: 1.05rem;
-    max-width: 520px;
+    max-width: 480px;
   }
 
   .alt-bg {
@@ -110,24 +98,24 @@ function getInitials(name: string) {
   }
 
   .group-header h2 {
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.25rem;
   }
 
   .group-header p {
     color: var(--color-text-light);
-    font-size: 0.92rem;
+    font-size: 0.9rem;
   }
 
   .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: 1rem;
   }
 
   .team-card {
     background: var(--color-white);
     border-radius: var(--radius-md);
-    padding: 1.75rem 1.25rem;
+    padding: 1.5rem 1rem;
     text-align: center;
     border: 1px solid var(--color-border);
     transition: var(--transition);
@@ -135,41 +123,40 @@ function getInitials(name: string) {
 
   .team-card:hover {
     box-shadow: var(--shadow-md);
-    transform: translateY(-2px);
   }
 
   .team-avatar {
-    width: 52px;
-    height: 52px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 0.75rem;
-    background: var(--color-primary);
+    margin: 0 auto 0.6rem;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
   }
 
   .team-avatar span {
-    color: white;
+    color: var(--color-text);
     font-weight: 700;
-    font-size: 0.9rem;
-    letter-spacing: 0.02em;
+    font-size: 0.8rem;
   }
 
   .team-card h3 {
-    font-size: 0.92rem;
-    margin-bottom: 0.15rem;
+    font-size: 0.88rem;
+    margin-bottom: 0.1rem;
   }
 
   .team-role {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     color: var(--color-text-muted);
     font-weight: 500;
   }
 
   .cta-section {
-    background: var(--color-primary);
     padding: 5rem 0;
+    border-top: 1px solid var(--color-border);
   }
 
   .cta-content {
@@ -177,14 +164,12 @@ function getInitials(name: string) {
   }
 
   .cta-content h2 {
-    color: white;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
   }
 
   .cta-content p {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 1.05rem;
-    max-width: 480px;
-    margin: 0 auto 2rem;
+    color: var(--color-text-light);
+    font-size: 1rem;
+    margin-bottom: 1.75rem;
   }
 </style>
