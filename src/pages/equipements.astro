@@ -4,155 +4,61 @@ import Layout from '../layouts/Layout.astro';
 const equipments = [
   {
     category: 'Balnéothérapie',
-    icon: '💧',
     items: ['Piscine 4 x 7 mètres', 'Hydrothérapie', 'Rééducation aquatique'],
     description: 'Notre piscine de 28 m² permet une rééducation en milieu aquatique, idéale pour la reprise en douceur après une blessure.'
   },
   {
     category: 'Musculation & Cardio',
-    icon: '🏋️',
     items: ['Presse', 'Leg extension & leg curl', 'Vélos & stepper', 'Elliptique', 'Tapis de course'],
     description: 'Un plateau technique complet pour le renforcement musculaire et la reprise cardiovasculaire.'
   },
   {
     category: 'Rééducation fonctionnelle',
-    icon: '🎯',
     items: ['TRX', 'Kettlebell', 'Step', 'Élastiques', 'Matériel fonctionnel', 'Huber'],
-    description: 'Équipements de rééducation fonctionnelle pour retrouver stabilité, proprioception et performance.'
+    description: 'Équipements pour retrouver stabilité, proprioception et performance.'
   },
   {
     category: 'Technologies',
-    icon: '⚡',
-    items: ['Ondes de choc', 'Cryothérapie', 'Appareil d\'échographie', 'Électro Kneehab', 'Game Ready'],
+    items: ['Ondes de choc', 'Cryothérapie', "Appareil d'échographie", 'Électro Kneehab', 'Game Ready'],
     description: 'Technologies de pointe pour accélérer la récupération et optimiser les traitements.'
   },
   {
     category: 'Soins individuels',
-    icon: '🤲',
     items: ['Salles de thérapie manuelle', 'Mobilisations articulaires', 'Pressothérapie', 'Packs de froid'],
-    description: 'Plusieurs salles dédiées aux soins individuels : thérapie manuelle, étirements et rééducation périnéale.'
+    description: 'Plusieurs salles dédiées : thérapie manuelle, étirements et rééducation périnéale.'
   },
+];
+
+const stats = [
+  { number: '350 m²', label: 'Surface totale' },
+  { number: '85 m²', label: 'Plateau technique' },
+  { number: '28 m²', label: 'Piscine' },
+  { number: '20+', label: "Ans d'expérience" },
 ];
 ---
 
-<Layout title="Équipements" description="Découvrez les équipements et installations du CR2S Nantes : piscine, plateau technique de 85m², technologies innovantes.">
+<Layout title="Équipements" description="Découvrez les équipements et installations du CR2S Nantes.">
   <section class="page-hero">
     <div class="container">
-      <div class="page-hero-content">
-        <div class="hero-badge">Nos installations</div>
-        <h1>Un plateau technique<br/><span class="text-accent">d'excellence</span></h1>
-        <p>350 m² d'espace dédié à votre rééducation, équipé des technologies les plus récentes.</p>
-      </div>
+      <span class="tag">Nos installations</span>
+      <h1>Un plateau technique d'excellence</h1>
+      <p class="page-intro">350 m² d'espace dédié à votre rééducation, équipé des technologies les plus récentes.</p>
     </div>
   </section>
 
-  <!-- CHIFFRES CLÉS -->
   <section class="section stats-section">
     <div class="container">
       <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        {stats.map(s => (
+          <div class="stat-card">
+            <span class="stat-number">{s.number}</span>
+            <span class="stat-label">{s.label}</span>
           </div>
-          <span class="stat-number">350 m²</span>
-          <span class="stat-label">Surface totale</span>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
-          </div>
-          <span class="stat-number">85 m²</span>
-          <span class="stat-label">Plateau technique</span>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l3-9 4 18 3-9h4"/></svg>
-          </div>
-          <span class="stat-number">28 m²</span>
-          <span class="stat-label">Piscine</span>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <span class="stat-number">20+</span>
-          <span class="stat-label">Ans d'expérience</span>
-        </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- ILLUSTRATION -->
-  <section class="section facility-section">
-    <div class="container">
-      <div class="facility-visual">
-        <svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg" class="facility-illustration">
-          <rect width="1000" height="400" rx="20" fill="var(--color-bg-alt)"/>
-
-          <!-- Pool area -->
-          <rect x="50" y="50" width="280" height="300" rx="12" fill="white" stroke="var(--color-border)" stroke-width="1"/>
-          <text x="190" y="80" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="var(--color-primary)">Balnéothérapie</text>
-          <rect x="80" y="100" width="220" height="130" rx="10" fill="var(--color-accent)" opacity="0.2"/>
-          <rect x="90" y="110" width="200" height="110" rx="8" fill="var(--color-accent)" opacity="0.15"/>
-          <!-- Waves -->
-          <path d="M100 160 Q130 148 160 160 Q190 172 220 160 Q250 148 280 160" stroke="var(--color-accent)" stroke-width="1.5" fill="none" opacity="0.5"/>
-          <path d="M100 175 Q130 163 160 175 Q190 187 220 175 Q250 163 280 175" stroke="var(--color-accent)" stroke-width="1.5" fill="none" opacity="0.3"/>
-          <text x="190" y="260" text-anchor="middle" font-family="Inter, sans-serif" font-weight="500" font-size="11" fill="var(--color-text-muted)">Piscine 4 x 7 m</text>
-
-          <!-- Gym area -->
-          <rect x="360" y="50" width="290" height="300" rx="12" fill="white" stroke="var(--color-border)" stroke-width="1"/>
-          <text x="505" y="80" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="var(--color-primary)">Plateau technique — 85 m²</text>
-          <!-- Equipment icons -->
-          <rect x="390" y="100" width="50" height="70" rx="6" fill="var(--color-primary)" opacity="0.1"/>
-          <rect x="400" y="130" width="30" height="6" rx="3" fill="var(--color-primary)" opacity="0.4"/>
-          <rect x="400" y="112" width="30" height="6" rx="3" fill="var(--color-primary)" opacity="0.4"/>
-          <text x="415" y="190" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="var(--color-text-muted)">Presse</text>
-
-          <rect x="460" y="100" width="50" height="70" rx="6" fill="var(--color-primary)" opacity="0.1"/>
-          <circle cx="485" cy="130" r="15" fill="none" stroke="var(--color-primary)" stroke-width="2" opacity="0.4"/>
-          <text x="485" y="190" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="var(--color-text-muted)">Cardio</text>
-
-          <rect x="530" y="100" width="50" height="70" rx="6" fill="var(--color-primary)" opacity="0.1"/>
-          <path d="M545 115 L565 145" stroke="var(--color-accent)" stroke-width="3" stroke-linecap="round"/>
-          <path d="M565 115 L545 145" stroke="var(--color-accent)" stroke-width="3" stroke-linecap="round"/>
-          <text x="555" y="190" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="var(--color-text-muted)">TRX</text>
-
-          <rect x="600" y="100" width="50" height="70" rx="6" fill="var(--color-accent)" opacity="0.1"/>
-          <path d="M615 140 L625 115 L635 140" stroke="var(--color-accent)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-          <text x="625" y="190" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="var(--color-text-muted)">Huber</text>
-
-          <!-- Tech area -->
-          <rect x="380" y="210" width="250" height="120" rx="8" fill="var(--color-bg-alt)" stroke="var(--color-border)" stroke-width="1"/>
-          <text x="505" y="240" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="12" fill="var(--color-primary)">Technologies innovantes</text>
-          <text x="505" y="265" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="var(--color-text-muted)">Ondes de choc · Cryothérapie</text>
-          <text x="505" y="282" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="var(--color-text-muted)">Échographie · Game Ready</text>
-          <text x="505" y="299" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="var(--color-text-muted)">Électro Kneehab</text>
-
-          <!-- Treatment rooms -->
-          <rect x="680" y="50" width="280" height="300" rx="12" fill="white" stroke="var(--color-border)" stroke-width="1"/>
-          <text x="820" y="80" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="var(--color-primary)">Salles de soins</text>
-
-          <rect x="710" y="100" width="100" height="80" rx="8" fill="var(--color-primary)" opacity="0.05" stroke="var(--color-border)" stroke-width="1"/>
-          <text x="760" y="145" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="var(--color-text-light)">Thérapie</text>
-          <text x="760" y="160" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="var(--color-text-light)">manuelle</text>
-
-          <rect x="830" y="100" width="100" height="80" rx="8" fill="var(--color-primary)" opacity="0.05" stroke="var(--color-border)" stroke-width="1"/>
-          <text x="880" y="145" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="var(--color-text-light)">Mobilisations</text>
-          <text x="880" y="160" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="var(--color-text-light)">articulaires</text>
-
-          <rect x="710" y="200" width="100" height="80" rx="8" fill="var(--color-primary)" opacity="0.05" stroke="var(--color-border)" stroke-width="1"/>
-          <text x="760" y="245" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="var(--color-text-light)">Presso-</text>
-          <text x="760" y="260" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="var(--color-text-light)">thérapie</text>
-
-          <rect x="830" y="200" width="100" height="80" rx="8" fill="var(--color-primary)" opacity="0.05" stroke="var(--color-border)" stroke-width="1"/>
-          <text x="880" y="245" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="var(--color-text-light)">Rééducation</text>
-          <text x="880" y="260" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="var(--color-text-light)">périnéale</text>
-        </svg>
-      </div>
-    </div>
-  </section>
-
-  <!-- ÉQUIPEMENTS DÉTAILS -->
   <section class="section equip-section">
     <div class="container">
       <div class="section-header">
@@ -161,16 +67,12 @@ const equipments = [
       </div>
       <div class="equip-grid">
         {equipments.map((eq) => (
-          <div class="equip-card card">
-            <span class="equip-icon">{eq.icon}</span>
+          <div class="card equip-card">
             <h3>{eq.category}</h3>
             <p class="equip-desc">{eq.description}</p>
             <ul class="equip-list">
               {eq.items.map(item => (
-                <li>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  {item}
-                </li>
+                <li>{item}</li>
               ))}
             </ul>
           </div>
@@ -179,11 +81,10 @@ const equipments = [
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="cta-section">
     <div class="container cta-content">
       <h2>Venez découvrir nos installations</h2>
-      <p>Notre centre vous accueille au rez-de-chaussée, en plein centre de Nantes, accessible PMR.</p>
+      <p>Au rez-de-chaussée, en plein centre de Nantes, accessible PMR.</p>
       <a href="/contact" class="btn btn-accent">Nous trouver</a>
     </div>
   </section>
@@ -192,51 +93,27 @@ const equipments = [
 <style>
   .page-hero {
     padding: 8rem 0 4rem;
-    background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
+    background: var(--color-bg);
   }
 
-  .page-hero-content {
-    max-width: 640px;
-  }
-
-  .hero-badge {
-    display: inline-block;
-    background: rgba(26, 92, 58, 0.08);
-    color: var(--color-primary);
-    padding: 0.4rem 1.2rem;
-    border-radius: 50px;
-    font-size: 0.85rem;
+  .tag {
+    font-size: 0.78rem;
     font-weight: 600;
-    margin-bottom: 1.5rem;
-    border: 1px solid rgba(26, 92, 58, 0.12);
+    color: var(--color-accent);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.75rem;
   }
 
   .page-hero h1 { margin-bottom: 1rem; }
 
-  .text-accent {
-    color: var(--color-primary);
-    position: relative;
-  }
-
-  .text-accent::after {
-    content: '';
-    position: absolute;
-    bottom: 2px;
-    left: 0;
-    right: 0;
-    height: 8px;
-    background: var(--color-accent);
-    opacity: 0.3;
-    border-radius: 4px;
-    z-index: -1;
-  }
-
-  .page-hero p {
+  .page-intro {
     color: var(--color-text-light);
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    max-width: 520px;
   }
 
-  /* STATS */
   .stats-section {
     padding-top: 0;
   }
@@ -244,7 +121,7 @@ const equipments = [
   .stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+    gap: 1rem;
   }
 
   .stat-card {
@@ -253,63 +130,31 @@ const equipments = [
     border-radius: var(--radius-md);
     padding: 1.5rem;
     text-align: center;
-    transition: var(--transition);
-  }
-
-  .stat-card:hover {
-    box-shadow: var(--shadow-md);
-    transform: translateY(-2px);
-  }
-
-  .stat-icon {
-    margin-bottom: 0.75rem;
   }
 
   .stat-number {
     display: block;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 800;
     color: var(--color-primary);
     line-height: 1.2;
+    letter-spacing: -0.03em;
   }
 
   .stat-label {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--color-text-muted);
+    margin-top: 0.15rem;
   }
 
-  /* FACILITY */
-  .facility-visual {
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
-  }
-
-  .facility-illustration {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  /* EQUIPMENT CARDS */
   .equip-section {
     background: var(--color-bg-alt);
   }
 
   .equip-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .equip-card {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .equip-icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
   }
 
   .equip-card h3 {
@@ -318,7 +163,7 @@ const equipments = [
 
   .equip-desc {
     color: var(--color-text-light);
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     margin-bottom: 1rem;
     line-height: 1.7;
   }
@@ -326,19 +171,25 @@ const equipments = [
   .equip-list {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.4rem;
   }
 
   .equip-list li {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     color: var(--color-text);
+    padding-left: 1rem;
+    position: relative;
   }
 
-  .equip-list li svg {
-    flex-shrink: 0;
+  .equip-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--color-accent);
   }
 
   .cta-section {
@@ -352,13 +203,13 @@ const equipments = [
 
   .cta-content h2 {
     color: white;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
   }
 
   .cta-content p {
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 1.1rem;
-    max-width: 500px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.05rem;
+    max-width: 480px;
     margin: 0 auto 2rem;
   }
 

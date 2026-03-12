@@ -1,141 +1,69 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const kines = [
-  { name: 'Cédric Lame', role: 'Kinésithérapeute' },
-  { name: 'Nicolas Foucher', role: 'Kinésithérapeute' },
-  { name: 'Maxime Foucher', role: 'Kinésithérapeute' },
-  { name: 'Adrien Couty', role: 'Kinésithérapeute' },
-  { name: 'Valentin Hulin', role: 'Kinésithérapeute' },
-  { name: 'Julie Philippot', role: 'Kinésithérapeute' },
-  { name: 'Théo Mahé', role: 'Kinésithérapeute' },
-  { name: 'Nina Marion', role: 'Kinésithérapeute' },
-  { name: 'Louis Landais', role: 'Kinésithérapeute' },
-  { name: 'Cécile Poirier', role: 'Kinésithérapeute' },
-  { name: 'Laurent Richard', role: 'Kinésithérapeute' },
-];
-
-const osteos = [
-  { name: 'Thomas Bizouarn', role: 'Ostéopathe' },
-  { name: 'Marion Gauthier Rat', role: 'Ostéopathe' },
-];
-
-const podos = [
-  { name: 'Praticien Podologie 1', role: 'Podologue' },
-  { name: 'Praticien Podologie 2', role: 'Podologue' },
-];
-
-const secretariat = [
-  { name: 'Martine', role: 'Secrétariat' },
-  { name: 'Patricia', role: 'Secrétariat' },
+const team = [
+  {
+    section: 'Kinésithérapeutes',
+    description: 'Notre équipe de kinés du sport vous accompagne dans votre rééducation',
+    members: [
+      'Cédric Lame', 'Nicolas Foucher', 'Maxime Foucher', 'Adrien Couty',
+      'Valentin Hulin', 'Julie Philippot', 'Théo Mahé', 'Nina Marion',
+      'Louis Landais', 'Cécile Poirier', 'Laurent Richard',
+    ],
+  },
+  {
+    section: 'Ostéopathes',
+    description: 'Prise en charge globale et personnalisée',
+    members: ['Thomas Bizouarn', 'Marion Gauthier Rat'],
+  },
+  {
+    section: 'Podologues',
+    description: 'Spécialistes de la podologie du sport',
+    members: ['Podologue 1', 'Podologue 2'],
+  },
+  {
+    section: 'Secrétariat',
+    description: 'Votre premier contact au centre',
+    members: ['Martine', 'Patricia'],
+  },
 ];
 
 function getInitials(name: string) {
   return name.split(' ').map(n => n[0]).join('').toUpperCase();
 }
-
-function getColor(index: number) {
-  const colors = ['#1a5c3a', '#2a7d52', '#4ecdc4', '#3a9d8f', '#1a7a5c', '#2d8b6a', '#45b5ad', '#1f6847'];
-  return colors[index % colors.length];
-}
 ---
 
-<Layout title="Notre équipe" description="Découvrez l'équipe pluridisciplinaire du CR2S Nantes : kinésithérapeutes, ostéopathes et podologues.">
+<Layout title="Notre équipe" description="Découvrez l'équipe pluridisciplinaire du CR2S Nantes.">
   <section class="page-hero">
     <div class="container">
-      <div class="page-hero-content">
-        <div class="hero-badge">Notre équipe</div>
-        <h1>Des professionnels<br/><span class="text-accent">passionnés</span></h1>
-        <p>13 praticiens spécialisés dans la rééducation sportive, à votre service du lundi au vendredi.</p>
-      </div>
+      <span class="tag">Notre équipe</span>
+      <h1>Des professionnels passionnés</h1>
+      <p class="page-intro">13 praticiens spécialisés dans la rééducation sportive, à votre service du lundi au vendredi.</p>
     </div>
   </section>
 
-  <!-- KINÉS -->
-  <section class="section">
-    <div class="container">
-      <div class="team-section-header">
-        <h2>Kinésithérapeutes</h2>
-        <p>Notre équipe de kinés du sport vous accompagne dans votre rééducation</p>
-      </div>
-      <div class="team-grid">
-        {kines.map((member, i) => (
-          <div class="team-card">
-            <div class="team-avatar" style={`background: ${getColor(i)}`}>
-              <span>{getInitials(member.name)}</span>
+  {team.map((group, gi) => (
+    <section class:list={['section', { 'alt-bg': gi % 2 === 1 }]}>
+      <div class="container">
+        <div class="group-header">
+          <h2>{group.section}</h2>
+          <p>{group.description}</p>
+        </div>
+        <div class="team-grid">
+          {group.members.map((name) => (
+            <div class="team-card">
+              <div class="team-avatar">
+                <span>{getInitials(name)}</span>
+              </div>
+              <h3>{name}</h3>
+              <span class="team-role">{group.section === 'Secrétariat' ? 'Secrétariat' : group.section.slice(0, -1)}</span>
             </div>
-            <h3>{member.name}</h3>
-            <span class="team-role">{member.role}</span>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  ))}
 
-  <!-- OSTÉOS -->
-  <section class="section alt-bg">
-    <div class="container">
-      <div class="team-section-header">
-        <h2>Ostéopathes</h2>
-        <p>Prise en charge globale et personnalisée</p>
-      </div>
-      <div class="team-grid">
-        {osteos.map((member, i) => (
-          <div class="team-card">
-            <div class="team-avatar" style={`background: ${getColor(i + 3)}`}>
-              <span>{getInitials(member.name)}</span>
-            </div>
-            <h3>{member.name}</h3>
-            <span class="team-role">{member.role}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- PODOLOGUES -->
-  <section class="section">
-    <div class="container">
-      <div class="team-section-header">
-        <h2>Podologues</h2>
-        <p>Spécialistes de la podologie du sport</p>
-      </div>
-      <div class="team-grid">
-        {podos.map((member, i) => (
-          <div class="team-card">
-            <div class="team-avatar" style={`background: ${getColor(i + 5)}`}>
-              <span>{getInitials(member.name)}</span>
-            </div>
-            <h3>{member.name}</h3>
-            <span class="team-role">{member.role}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- SECRÉTARIAT -->
-  <section class="section alt-bg">
-    <div class="container">
-      <div class="team-section-header">
-        <h2>Secrétariat</h2>
-        <p>Votre premier contact au centre</p>
-      </div>
-      <div class="team-grid">
-        {secretariat.map((member, i) => (
-          <div class="team-card">
-            <div class="team-avatar" style={`background: ${getColor(i + 7)}`}>
-              <span>{getInitials(member.name)}</span>
-            </div>
-            <h3>{member.name}</h3>
-            <span class="team-role">{member.role}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
   <section class="cta-section">
     <div class="container cta-content">
       <h2>Rencontrez notre équipe</h2>
@@ -150,91 +78,56 @@ function getColor(index: number) {
 <style>
   .page-hero {
     padding: 8rem 0 4rem;
-    background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
+    background: var(--color-bg);
   }
 
-  .page-hero-content {
-    max-width: 640px;
-  }
-
-  .hero-badge {
-    display: inline-block;
-    background: rgba(26, 92, 58, 0.08);
-    color: var(--color-primary);
-    padding: 0.4rem 1.2rem;
-    border-radius: 50px;
-    font-size: 0.85rem;
+  .tag {
+    font-size: 0.78rem;
     font-weight: 600;
-    margin-bottom: 1.5rem;
-    border: 1px solid rgba(26, 92, 58, 0.12);
+    color: var(--color-accent);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.75rem;
   }
 
   .page-hero h1 {
     margin-bottom: 1rem;
   }
 
-  .text-accent {
-    color: var(--color-primary);
-    position: relative;
-  }
-
-  .text-accent::after {
-    content: '';
-    position: absolute;
-    bottom: 2px;
-    left: 0;
-    right: 0;
-    height: 8px;
-    background: var(--color-accent);
-    opacity: 0.3;
-    border-radius: 4px;
-    z-index: -1;
-  }
-
-  .page-hero p {
+  .page-intro {
     color: var(--color-text-light);
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    max-width: 520px;
   }
 
   .alt-bg {
     background: var(--color-bg-alt);
   }
 
-  .team-section-header {
-    margin-bottom: 2.5rem;
+  .group-header {
+    margin-bottom: 2rem;
   }
 
-  .team-section-header h2 {
-    margin-bottom: 0.5rem;
-    position: relative;
-    display: inline-block;
+  .group-header h2 {
+    margin-bottom: 0.35rem;
   }
 
-  .team-section-header h2::after {
-    content: '';
-    display: block;
-    width: 40px;
-    height: 3px;
-    background: var(--color-accent);
-    margin-top: 0.5rem;
-    border-radius: 2px;
-  }
-
-  .team-section-header p {
+  .group-header p {
     color: var(--color-text-light);
-    font-size: 0.95rem;
+    font-size: 0.92rem;
   }
 
   .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
   }
 
   .team-card {
     background: var(--color-white);
     border-radius: var(--radius-md);
-    padding: 2rem 1.5rem;
+    padding: 1.75rem 1.25rem;
     text-align: center;
     border: 1px solid var(--color-border);
     transition: var(--transition);
@@ -242,33 +135,34 @@ function getColor(index: number) {
 
   .team-card:hover {
     box-shadow: var(--shadow-md);
-    transform: translateY(-4px);
+    transform: translateY(-2px);
   }
 
   .team-avatar {
-    width: 64px;
-    height: 64px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1rem;
+    margin: 0 auto 0.75rem;
+    background: var(--color-primary);
   }
 
   .team-avatar span {
     color: white;
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     letter-spacing: 0.02em;
   }
 
   .team-card h3 {
-    font-size: 1rem;
-    margin-bottom: 0.25rem;
+    font-size: 0.92rem;
+    margin-bottom: 0.15rem;
   }
 
   .team-role {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--color-text-muted);
     font-weight: 500;
   }
@@ -284,13 +178,13 @@ function getColor(index: number) {
 
   .cta-content h2 {
     color: white;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
   }
 
   .cta-content p {
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 1.1rem;
-    max-width: 500px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.05rem;
+    max-width: 480px;
     margin: 0 auto 2rem;
   }
 </style>

@@ -6,12 +6,10 @@ const year = new Date().getFullYear();
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="footer-logo">
-          <span class="logo-name">CR2S</span>
-          <span class="logo-subtitle">Centre de Rééducation Sport & Santé</span>
-        </div>
+        <span class="footer-logo">CR2S</span>
+        <p class="footer-tagline">Centre de Rééducation<br/>Sport & Santé</p>
         <p class="footer-desc">
-          Depuis plus de 20 ans, nous accompagnons les sportifs amateurs et professionnels dans leur rééducation à Nantes.
+          Depuis plus de 20 ans, nous accompagnons les sportifs amateurs et professionnels dans leur rééducation au coeur de Nantes.
         </p>
       </div>
 
@@ -52,95 +50,90 @@ const year = new Date().getFullYear();
 <style>
   .footer {
     background: var(--color-primary-dark);
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.7);
     padding: 4rem 0 0;
   }
 
   .footer-grid {
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
-    gap: 3rem;
+    gap: 2.5rem;
   }
 
-  .footer-brand .logo-name {
-    font-size: 1.6rem;
+  .footer-logo {
+    font-size: 1.5rem;
     font-weight: 800;
     color: white;
-    display: block;
+    letter-spacing: -0.03em;
   }
 
-  .footer-brand .logo-subtitle {
+  .footer-tagline {
     font-size: 0.75rem;
     color: var(--color-accent);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: 500;
+    letter-spacing: 0.04em;
+    margin-top: 0.25rem;
+    line-height: 1.4;
   }
 
   .footer-desc {
     margin-top: 1rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     line-height: 1.7;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.45);
   }
 
   .footer-col h4 {
     color: white;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 1.25rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+    font-weight: 600;
   }
 
   .footer-col a,
   .footer-col p {
     display: block;
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.6);
-    padding: 0.3rem 0;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 0.25rem 0;
     transition: var(--transition);
   }
 
   .footer-col a:hover {
     color: var(--color-accent);
-    padding-left: 4px;
   }
 
   .footer-phone {
     font-weight: 600;
     color: white !important;
-    font-size: 1rem !important;
     margin-top: 0.5rem;
   }
 
   .footer-cta {
-    margin-top: 1rem;
-    padding: 0.6rem 1.2rem;
-    font-size: 0.85rem;
+    margin-top: 0.75rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
     display: inline-flex;
   }
 
   .footer-bottom {
     margin-top: 3rem;
-    padding: 1.5rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.25rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     text-align: center;
   }
 
   .footer-bottom p {
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.3);
   }
 
   @media (max-width: 840px) {
-    .footer-grid {
-      grid-template-columns: 1fr 1fr;
-    }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
   }
 
   @media (max-width: 540px) {
-    .footer-grid {
-      grid-template-columns: 1fr;
-    }
+    .footer-grid { grid-template-columns: 1fr; }
   }
 </style>

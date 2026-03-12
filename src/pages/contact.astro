@@ -2,84 +2,63 @@
 import Layout from '../layouts/Layout.astro';
 
 const horaires = [
-  { jour: 'Lundi', heures: '08h45 - 12h30 / 13h45 - 18h30' },
-  { jour: 'Mardi', heures: '08h45 - 12h30 / 13h45 - 18h30' },
-  { jour: 'Mercredi', heures: '08h45 - 12h30 / 13h45 - 18h30' },
-  { jour: 'Jeudi', heures: '08h45 - 12h30 / 13h45 - 18h30' },
-  { jour: 'Vendredi', heures: '08h45 - 12h30 / 13h45 - 18h30' },
+  { jour: 'Lundi', heures: '08h45 – 12h30 / 13h45 – 18h30' },
+  { jour: 'Mardi', heures: '08h45 – 12h30 / 13h45 – 18h30' },
+  { jour: 'Mercredi', heures: '08h45 – 12h30 / 13h45 – 18h30' },
+  { jour: 'Jeudi', heures: '08h45 – 12h30 / 13h45 – 18h30' },
+  { jour: 'Vendredi', heures: '08h45 – 12h30 / 13h45 – 18h30' },
   { jour: 'Samedi', heures: 'Fermé' },
   { jour: 'Dimanche', heures: 'Fermé' },
 ];
 ---
 
-<Layout title="Contact" description="Contactez le CR2S Nantes : adresse, horaires, téléphone et prise de rendez-vous en ligne.">
+<Layout title="Contact" description="Contactez le CR2S Nantes : adresse, horaires, téléphone et prise de rendez-vous.">
   <section class="page-hero">
     <div class="container">
-      <div class="page-hero-content">
-        <div class="hero-badge">Contact</div>
-        <h1>Nous <span class="text-accent">trouver</span></h1>
-        <p>En plein centre de Nantes, notre centre vous accueille du lundi au vendredi. Accessible PMR, au rez-de-chaussée.</p>
-      </div>
+      <span class="tag">Contact</span>
+      <h1>Nous trouver</h1>
+      <p class="page-intro">En plein centre de Nantes, notre centre vous accueille du lundi au vendredi. Accessible PMR, au rez-de-chaussée.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
       <div class="contact-grid">
-        <!-- INFO -->
         <div class="contact-info">
-          <div class="info-card card">
-            <div class="info-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div>
-              <h3>Adresse</h3>
-              <p>18 bis, rue Fouré<br/>44000 Nantes</p>
-              <span class="info-detail">Rez-de-chaussée, accessible PMR</span>
-            </div>
+          <div class="info-block">
+            <h3>Adresse</h3>
+            <p>18 bis, rue Fouré<br/>44000 Nantes</p>
+            <span class="info-meta">Rez-de-chaussée, accessible PMR</span>
           </div>
 
-          <div class="info-card card">
-            <div class="info-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </div>
-            <div>
-              <h3>Téléphone</h3>
-              <a href="tel:0240890014" class="phone-link">02 40 89 00 14</a>
-              <span class="info-detail">Martine et Patricia vous accueillent</span>
-            </div>
+          <div class="info-block">
+            <h3>Téléphone</h3>
+            <a href="tel:0240890014" class="phone-link">02 40 89 00 14</a>
+            <span class="info-meta">Martine et Patricia vous accueillent</span>
           </div>
 
-          <div class="info-card card">
-            <div class="info-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            </div>
-            <div>
-              <h3>Rendez-vous en ligne</h3>
-              <a href="https://www.maiia.com/cabinet-paramedical/44000-nantes/cr2s-centre-de-reeducation-sport---sante" target="_blank" rel="noopener" class="btn btn-primary rdv-btn">
-                Réserver sur Maiia
-              </a>
-            </div>
+          <div class="info-block">
+            <h3>Rendez-vous en ligne</h3>
+            <a href="https://www.maiia.com/cabinet-paramedical/44000-nantes/cr2s-centre-de-reeducation-sport---sante" target="_blank" rel="noopener" class="btn btn-accent rdv-btn">
+              Réserver sur Maiia
+            </a>
           </div>
 
-          <div class="info-card card">
-            <div class="info-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            </div>
-            <div>
-              <h3>Moyens de paiement</h3>
-              <p>Espèces, carte bancaire, chèques</p>
-            </div>
+          <div class="info-block">
+            <h3>Moyens de paiement</h3>
+            <p>Espèces, carte bancaire, chèques</p>
+          </div>
+
+          <div class="info-block">
+            <a href="https://www.google.com/maps/search/?api=1&query=18+bis+rue+Fouré+44000+Nantes" target="_blank" rel="noopener" class="btn btn-outline">
+              Ouvrir dans Google Maps
+            </a>
           </div>
         </div>
 
-        <!-- HORAIRES -->
         <div class="hours-section">
           <div class="hours-card">
-            <h3>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              Horaires d'ouverture
-            </h3>
+            <h3>Horaires d'ouverture</h3>
             <div class="hours-table">
               {horaires.map((h) => (
                 <div class:list={['hours-row', { closed: h.heures === 'Fermé' }]}>
@@ -89,53 +68,11 @@ const horaires = [
               ))}
             </div>
           </div>
-
-          <!-- MAP PLACEHOLDER -->
-          <div class="map-wrapper">
-            <div class="map-placeholder">
-              <svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg" class="map-illustration">
-                <rect width="500" height="300" rx="12" fill="#e8f0ec"/>
-                <!-- Street grid -->
-                <line x1="0" y1="150" x2="500" y2="150" stroke="#c8d8d0" stroke-width="20"/>
-                <line x1="250" y1="0" x2="250" y2="300" stroke="#c8d8d0" stroke-width="16"/>
-                <line x1="100" y1="0" x2="100" y2="300" stroke="#d4e0d8" stroke-width="8"/>
-                <line x1="400" y1="0" x2="400" y2="300" stroke="#d4e0d8" stroke-width="8"/>
-                <line x1="0" y1="80" x2="500" y2="80" stroke="#d4e0d8" stroke-width="8"/>
-                <line x1="0" y1="220" x2="500" y2="220" stroke="#d4e0d8" stroke-width="8"/>
-
-                <!-- Buildings -->
-                <rect x="110" y="85" width="60" height="55" rx="4" fill="#d0dcd4"/>
-                <rect x="180" y="90" width="50" height="50" rx="4" fill="#d0dcd4"/>
-                <rect x="270" y="85" width="80" height="55" rx="4" fill="#d0dcd4"/>
-                <rect x="110" y="160" width="70" height="50" rx="4" fill="#d0dcd4"/>
-                <rect x="270" y="160" width="60" height="50" rx="4" fill="#d0dcd4"/>
-
-                <!-- CR2S marker -->
-                <circle cx="250" cy="130" r="20" fill="var(--color-primary)" opacity="0.2"/>
-                <circle cx="250" cy="130" r="10" fill="var(--color-primary)"/>
-                <circle cx="250" cy="130" r="4" fill="white"/>
-
-                <!-- Label -->
-                <rect x="185" y="42" width="130" height="28" rx="14" fill="var(--color-primary)"/>
-                <text x="250" y="61" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="11" fill="white">CR2S — Rue Fouré</text>
-                <line x1="250" y1="70" x2="250" y2="120" stroke="var(--color-primary)" stroke-width="2" stroke-dasharray="4 3"/>
-
-                <!-- Street labels -->
-                <text x="350" y="147" font-family="Inter, sans-serif" font-size="9" fill="var(--color-text-muted)">Rue Fouré</text>
-                <text x="255" y="270" font-family="Inter, sans-serif" font-size="9" fill="var(--color-text-muted)">Centre-ville Nantes</text>
-              </svg>
-              <a href="https://www.google.com/maps/search/?api=1&query=18+bis+rue+Fouré+44000+Nantes" target="_blank" rel="noopener" class="map-link btn btn-outline">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Ouvrir dans Google Maps
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ACCÈS -->
   <section class="section access-section">
     <div class="container">
       <div class="section-header">
@@ -144,23 +81,14 @@ const horaires = [
       </div>
       <div class="grid-3">
         <div class="card access-card">
-          <div class="access-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-          </div>
           <h3>En voiture</h3>
           <p>Parking à proximité. Le centre se situe en plein coeur de Nantes, rue Fouré.</p>
         </div>
         <div class="card access-card">
-          <div class="access-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
-          </div>
           <h3>En tramway</h3>
-          <p>Arrêts de tramway à proximité du centre-ville de Nantes, à quelques minutes à pied.</p>
+          <p>Arrêts de tramway à proximité, à quelques minutes à pied du centre.</p>
         </div>
         <div class="card access-card">
-          <div class="access-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18.5" cy="18.5" r="3.5"/><circle cx="5.5" cy="18.5" r="3.5"/><path d="M15 5l1 7M8 18.5h7M6 7h9.5L18 18.5"/></svg>
-          </div>
           <h3>À vélo</h3>
           <p>Stations Bicloo à proximité. Le centre est facilement accessible à vélo.</p>
         </div>
@@ -172,51 +100,27 @@ const horaires = [
 <style>
   .page-hero {
     padding: 8rem 0 4rem;
-    background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
+    background: var(--color-bg);
   }
 
-  .page-hero-content {
-    max-width: 640px;
-  }
-
-  .hero-badge {
-    display: inline-block;
-    background: rgba(26, 92, 58, 0.08);
-    color: var(--color-primary);
-    padding: 0.4rem 1.2rem;
-    border-radius: 50px;
-    font-size: 0.85rem;
+  .tag {
+    font-size: 0.78rem;
     font-weight: 600;
-    margin-bottom: 1.5rem;
-    border: 1px solid rgba(26, 92, 58, 0.12);
+    color: var(--color-accent);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.75rem;
   }
 
   .page-hero h1 { margin-bottom: 1rem; }
 
-  .text-accent {
-    color: var(--color-primary);
-    position: relative;
-  }
-
-  .text-accent::after {
-    content: '';
-    position: absolute;
-    bottom: 2px;
-    left: 0;
-    right: 0;
-    height: 8px;
-    background: var(--color-accent);
-    opacity: 0.3;
-    border-radius: 4px;
-    z-index: -1;
-  }
-
-  .page-hero p {
+  .page-intro {
     color: var(--color-text-light);
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    max-width: 520px;
   }
 
-  /* CONTACT GRID */
   .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -226,47 +130,30 @@ const horaires = [
   .contact-info {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.75rem;
   }
 
-  .info-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.25rem;
-    padding: 1.5rem;
-  }
-
-  .info-icon {
-    width: 48px;
-    height: 48px;
-    background: var(--color-bg-alt);
-    border-radius: var(--radius-sm);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .info-card h3 {
-    font-size: 1rem;
+  .info-block h3 {
+    font-size: 0.9rem;
     margin-bottom: 0.35rem;
+    letter-spacing: 0;
   }
 
-  .info-card p {
+  .info-block p {
     color: var(--color-text-light);
     font-size: 0.9rem;
     line-height: 1.6;
   }
 
-  .info-detail {
-    font-size: 0.8rem;
+  .info-meta {
+    font-size: 0.78rem;
     color: var(--color-text-muted);
     display: block;
-    margin-top: 0.25rem;
+    margin-top: 0.2rem;
   }
 
   .phone-link {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--color-primary);
     display: block;
@@ -278,16 +165,8 @@ const horaires = [
   }
 
   .rdv-btn {
-    margin-top: 0.5rem;
     padding: 0.6rem 1.4rem;
     font-size: 0.85rem;
-  }
-
-  /* HOURS */
-  .hours-section {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
   }
 
   .hours-card {
@@ -298,10 +177,7 @@ const horaires = [
   }
 
   .hours-card h3 {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1.05rem;
+    font-size: 1rem;
     margin-bottom: 1.25rem;
   }
 
@@ -313,9 +189,9 @@ const horaires = [
   .hours-row {
     display: flex;
     justify-content: space-between;
-    padding: 0.6rem 0;
+    padding: 0.55rem 0;
     border-bottom: 1px solid var(--color-border);
-    font-size: 0.9rem;
+    font-size: 0.88rem;
   }
 
   .hours-row:last-child {
@@ -335,34 +211,6 @@ const horaires = [
     font-style: italic;
   }
 
-  /* MAP */
-  .map-wrapper {
-    border-radius: var(--radius-md);
-    overflow: hidden;
-  }
-
-  .map-placeholder {
-    position: relative;
-  }
-
-  .map-illustration {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: var(--radius-md);
-  }
-
-  .map-link {
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background: white;
-    font-size: 0.85rem;
-    box-shadow: var(--shadow-md);
-  }
-
-  /* ACCESS */
   .access-section {
     background: var(--color-bg-alt);
   }
@@ -371,25 +219,13 @@ const horaires = [
     text-align: center;
   }
 
-  .access-icon {
-    width: 56px;
-    height: 56px;
-    background: var(--color-bg-alt);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1rem;
-    border: 2px solid var(--color-border);
-  }
-
   .access-card h3 {
     margin-bottom: 0.5rem;
   }
 
   .access-card p {
     color: var(--color-text-light);
-    font-size: 0.9rem;
+    font-size: 0.88rem;
   }
 
   @media (max-width: 840px) {
